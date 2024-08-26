@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/holasoymalva/da-white-noise/static/css/main.fc489fe0.css",
-    "main.js": "/holasoymalva/da-white-noise/static/js/main.3800749f.js",
-    "static/js/453.6aedeb2f.chunk.js": "/holasoymalva/da-white-noise/static/js/453.6aedeb2f.chunk.js",
-    "index.html": "/holasoymalva/da-white-noise/index.html",
-    "main.fc489fe0.css.map": "/holasoymalva/da-white-noise/static/css/main.fc489fe0.css.map",
-    "main.3800749f.js.map": "/holasoymalva/da-white-noise/static/js/main.3800749f.js.map",
-    "453.6aedeb2f.chunk.js.map": "/holasoymalva/da-white-noise/static/js/453.6aedeb2f.chunk.js.map"
+    "main.css": "/da-white-noise/static/css/main.fc489fe0.css",
+    "main.js": "/da-white-noise/static/js/main.30915ecb.js",
+    "static/js/453.6aedeb2f.chunk.js": "/da-white-noise/static/js/453.6aedeb2f.chunk.js",
+    "index.html": "/da-white-noise/index.html",
+    "main.fc489fe0.css.map": "/da-white-noise/static/css/main.fc489fe0.css.map",
+    "main.30915ecb.js.map": "/da-white-noise/static/js/main.30915ecb.js.map",
+    "453.6aedeb2f.chunk.js.map": "/da-white-noise/static/js/453.6aedeb2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc489fe0.css",
-    "static/js/main.3800749f.js"
+    "static/js/main.30915ecb.js"
   ]
 }

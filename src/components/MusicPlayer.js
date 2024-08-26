@@ -63,7 +63,8 @@ function MusicPlayer() {
         </div>
       </div>
       <audio ref={audioRef} loop volume={volume}>
-        <source src="./assets/sleep-music.m4a" type="audio/mp3" />
+        {/* Usar process.env.PUBLIC_URL para construir la URL relativa correcta */}
+        <source src={`${process.env.PUBLIC_URL}/assets/sleep-music.m4a`} type="audio/mp4" />
         Tu navegador no soporta el elemento de audio.
       </audio>
       <div className="controls">

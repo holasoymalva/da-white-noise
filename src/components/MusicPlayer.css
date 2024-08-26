@@ -1,0 +1,150 @@
+/* src/components/MusicPlayer.css */
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #181818; /* Fondo oscuro */
+    color: white;
+  }
+  
+  .visualizer {
+    margin-bottom: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(8, 40px);
+    gap: 5px;
+  }
+  
+  /* .grid-item {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .grid-item:hover {
+    background-color: #555;
+  } */
+
+  .grid-item {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 2s; /* Cambia el color suavemente en 1 segundo */
+  }
+  
+  .grid-item:hover {
+    background-color: #555;
+  }
+  
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-button {
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  .control-button:hover {
+    background-color: #555;
+  }
+  
+  .volume-slider {
+    width: 150px;
+    cursor: pointer;
+  }
+
+
+  .volume-slider {
+    -webkit-appearance: none; /* Eliminar el estilo por defecto en navegadores WebKit */
+    appearance: none; /* Eliminar el estilo por defecto */
+    width: 150px;
+    height: 8px;
+    background-color: #333; /* Color de la barra */
+    cursor: pointer;
+    border-radius: 5px; /* Para hacer los bordes de la barra redondeados */
+    outline: none; /* Eliminar el borde al enfocar */
+  }
+  
+  /* Estilo del thumb (control) del slider para navegadores WebKit */
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Eliminar el estilo por defecto */
+    appearance: none; /* Eliminar el estilo por defecto */
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff; /* Color del thumb */
+    cursor: pointer;
+    border-radius: 50%; /* Hacer el thumb redondeado */
+    transition: background-color 0.3s ease; /* Transición para hover */
+  }
+  
+  .volume-slider::-webkit-slider-thumb:hover {
+    background-color: #555; /* Color del thumb al hacer hover */
+  }
+  
+  /* Estilo del thumb (control) del slider para navegadores Firefox */
+  .volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #777; /* Color del thumb */
+    cursor: pointer;
+    border-radius: 50%; /* Hacer el thumb redondeado */
+    transition: background-color 0.3s ease; /* Transición para hover */
+  }
+  
+  .volume-slider::-moz-range-thumb:hover {
+    background-color: #555; /* Color del thumb al hacer hover */
+  }
+  
+  /* Para cambiar el color del track del slider en Firefox */
+  .volume-slider::-moz-range-track {
+    background-color: #333;
+    border-radius: 5px;
+    height: 8px;
+  }
+  
+  /* Estilos para navegadores de Internet Explorer */
+  .volume-slider::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #777; /* Color del thumb */
+    cursor: pointer;
+    border-radius: 50%; /* Hacer el thumb redondeado */
+  }
+  
+  .volume-slider::-ms-track {
+    width: 100%;
+    height: 8px;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  
+  .volume-slider::-ms-fill-lower {
+    background-color: #333;
+    border-radius: 5px;
+  }
+  
+  .volume-slider::-ms-fill-upper {
+    background-color: #333;
+    border-radius: 5px;
+  }

@@ -1,150 +1,153 @@
 /* src/components/MusicPlayer.css */
 
 .music-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #181818; /* Fondo oscuro */
-    color: white;
-  }
-  
-  .visualizer {
-    margin-bottom: 20px;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(8, 40px);
-    grid-template-rows: repeat(8, 40px);
-    gap: 5px;
-  }
-  
-  /* .grid-item {
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .grid-item:hover {
-    background-color: #555;
-  } */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #181818; /* Fondo oscuro */
+  color: white;
+  padding: 20px; /* Añadir padding para espaciar el contenido en pantallas más pequeñas */
+  box-sizing: border-box; /* Incluir el padding en el ancho y alto total */
+}
 
+.visualizer {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px; /* Limita el ancho máximo en pantallas grandes */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* Usar 1fr para columnas flexibles */
+  grid-template-rows: repeat(8, 1fr); /* Usar 1fr para filas flexibles */
+  gap: 5px;
+  width: 100%;
+  max-width: 400px; /* Limita el ancho máximo de la cuadrícula */
+  height: auto; /* Altura automática para mantener la relación */
+}
+
+.grid-item {
+  width: 100%; /* Asegura que los items se expandan a las columnas */
+  padding-top: 100%; /* Mantiene una relación de aspecto cuadrada */
+  background-color: #333;
+  border-radius: 5px;
+  transition: background-color 2s; /* Cambia el color suavemente en 1 segundo */
+}
+
+.grid-item:hover {
+  background-color: #555;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px; /* Limita el ancho máximo de los controles */
+}
+
+.control-button {
+  padding: 10px 20px;
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.control-button:hover {
+  background-color: #555;
+}
+
+.volume-slider {
+  width: 100%;
+  max-width: 150px; /* Limita el ancho máximo de la barra de volumen */
+  cursor: pointer;
+  -webkit-appearance: none; /* Eliminar el estilo por defecto en navegadores WebKit */
+  appearance: none; /* Eliminar el estilo por defecto */
+  height: 8px;
+  background-color: #333; /* Color de la barra */
+  border-radius: 5px; /* Para hacer los bordes de la barra redondeados */
+  outline: none; /* Eliminar el borde al enfocar */
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Eliminar el estilo por defecto */
+  appearance: none; /* Eliminar el estilo por defecto */
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff; /* Color del thumb */
+  cursor: pointer;
+  border-radius: 50%; /* Hacer el thumb redondeado */
+  transition: background-color 0.3s ease; /* Transición para hover */
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  background-color: #555; /* Color del thumb al hacer hover */
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #777; /* Color del thumb */
+  cursor: pointer;
+  border-radius: 50%; /* Hacer el thumb redondeado */
+  transition: background-color 0.3s ease; /* Transición para hover */
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  background-color: #555; /* Color del thumb al hacer hover */
+}
+
+.volume-slider::-moz-range-track {
+  background-color: #333;
+  border-radius: 5px;
+  height: 8px;
+}
+
+.volume-slider::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #777; /* Color del thumb */
+  cursor: pointer;
+  border-radius: 50%; /* Hacer el thumb redondeado */
+}
+
+.volume-slider::-ms-track {
+  width: 100%;
+  height: 8px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.volume-slider::-ms-fill-lower {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.volume-slider::-ms-fill-upper {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 600px) {
   .grid-item {
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-    border-radius: 5px;
-    transition: background-color 2s; /* Cambia el color suavemente en 1 segundo */
+    padding-top: 100%; /* Mantener la relación de aspecto cuadrada */
   }
-  
-  .grid-item:hover {
-    background-color: #555;
-  }
-  
-  .controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
+
   .control-button {
-    padding: 10px 20px;
-    background-color: #333;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
-  }
-  
-  .control-button:hover {
-    background-color: #555;
-  }
-  
-  .volume-slider {
-    width: 150px;
-    cursor: pointer;
+    font-size: 0.9rem; /* Disminuir el tamaño del texto en pantallas más pequeñas */
   }
 
-
   .volume-slider {
-    -webkit-appearance: none; /* Eliminar el estilo por defecto en navegadores WebKit */
-    appearance: none; /* Eliminar el estilo por defecto */
-    width: 150px;
-    height: 8px;
-    background-color: #333; /* Color de la barra */
-    cursor: pointer;
-    border-radius: 5px; /* Para hacer los bordes de la barra redondeados */
-    outline: none; /* Eliminar el borde al enfocar */
+    max-width: 120px; /* Reducir el ancho máximo en pantallas pequeñas */
   }
-  
-  /* Estilo del thumb (control) del slider para navegadores WebKit */
-  .volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Eliminar el estilo por defecto */
-    appearance: none; /* Eliminar el estilo por defecto */
-    width: 16px;
-    height: 16px;
-    background-color: #ffffff; /* Color del thumb */
-    cursor: pointer;
-    border-radius: 50%; /* Hacer el thumb redondeado */
-    transition: background-color 0.3s ease; /* Transición para hover */
-  }
-  
-  .volume-slider::-webkit-slider-thumb:hover {
-    background-color: #555; /* Color del thumb al hacer hover */
-  }
-  
-  /* Estilo del thumb (control) del slider para navegadores Firefox */
-  .volume-slider::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    background-color: #777; /* Color del thumb */
-    cursor: pointer;
-    border-radius: 50%; /* Hacer el thumb redondeado */
-    transition: background-color 0.3s ease; /* Transición para hover */
-  }
-  
-  .volume-slider::-moz-range-thumb:hover {
-    background-color: #555; /* Color del thumb al hacer hover */
-  }
-  
-  /* Para cambiar el color del track del slider en Firefox */
-  .volume-slider::-moz-range-track {
-    background-color: #333;
-    border-radius: 5px;
-    height: 8px;
-  }
-  
-  /* Estilos para navegadores de Internet Explorer */
-  .volume-slider::-ms-thumb {
-    width: 16px;
-    height: 16px;
-    background-color: #777; /* Color del thumb */
-    cursor: pointer;
-    border-radius: 50%; /* Hacer el thumb redondeado */
-  }
-  
-  .volume-slider::-ms-track {
-    width: 100%;
-    height: 8px;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  
-  .volume-slider::-ms-fill-lower {
-    background-color: #333;
-    border-radius: 5px;
-  }
-  
-  .volume-slider::-ms-fill-upper {
-    background-color: #333;
-    border-radius: 5px;
-  }
+}
